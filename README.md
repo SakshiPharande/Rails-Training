@@ -104,5 +104,3 @@ While working on this project, my primary goal is to understand and practice the
 - Deployment to a live environment is not yet configured but will be explored in later stages of this project.
 
 ---
-
-Let me know if you’d like additional updates or need help customizing further!
