@@ -1,4 +1,5 @@
 class User < ApplicationRecord
-   # Enum for role with user and admin as possible values
+   has_secure_password
+   validates :email, presence: true, uniqueness: true
    enum role: { user: 0, admin: 1 }
 end

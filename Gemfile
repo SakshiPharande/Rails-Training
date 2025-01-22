@@ -55,3 +55,11 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem "rails-erd"
+
+gem "bcrypt", "~> 3.1.7"
+
+group :development do
+  gem "byebug", "~> 11.1"
+end

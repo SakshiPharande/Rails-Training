@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_01_22_025832) do
+ActiveRecord::Schema[7.2].define(version: 2025_01_22_053859) do
   create_table "adoption_requests", force: :cascade do |t|
     t.integer "pet_id", null: false
     t.integer "breed_id", null: false
@@ -30,6 +30,7 @@ ActiveRecord::Schema[7.2].define(version: 2025_01_22_025832) do
     t.string "breed_name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "category_id", null: false
   end
 
   create_table "categories", force: :cascade do |t|
@@ -81,6 +82,7 @@ ActiveRecord::Schema[7.2].define(version: 2025_01_22_025832) do
   add_foreign_key "adoption_requests", "breeds"
   add_foreign_key "adoption_requests", "pets"
   add_foreign_key "adoption_requests", "users", column: "u_id"
+  add_foreign_key "breeds", "categories"
   add_foreign_key "pet_parent_applications", "pets"
   add_foreign_key "pet_parent_applications", "users"
   add_foreign_key "pets", "breeds"
