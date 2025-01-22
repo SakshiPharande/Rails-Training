@@ -10,7 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_01_21_171531) do
+ActiveRecord::Schema[7.2].define(version: 2025_01_22_025044) do
+  create_table "adoption_requests", force: :cascade do |t|
+    t.integer "pet_id", null: false
+    t.integer "breed_id", null: false
+    t.datetime "adoption_date"
+    t.integer "u_id", null: false
+    t.string "address"
+    t.string "phone_no"
+    t.string "email"
+    t.integer "status", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["breed_id"], name: "index_adoption_requests_on_breed_id"
+    t.index ["pet_id"], name: "index_adoption_requests_on_pet_id"
+  end
+
   create_table "breeds", force: :cascade do |t|
     t.string "breed_name", null: false
     t.datetime "created_at", null: false
@@ -51,6 +66,9 @@ ActiveRecord::Schema[7.2].define(version: 2025_01_21_171531) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "adoption_requests", "breeds"
+  add_foreign_key "adoption_requests", "pets"
+  add_foreign_key "adoption_requests", "users", column: "u_id"
   add_foreign_key "pets", "breeds"
   add_foreign_key "pets", "breeds"
   add_foreign_key "pets", "categories"
