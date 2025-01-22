@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_01_22_025044) do
+ActiveRecord::Schema[7.2].define(version: 2025_01_22_025832) do
   create_table "adoption_requests", force: :cascade do |t|
     t.integer "pet_id", null: false
     t.integer "breed_id", null: false
@@ -36,6 +36,18 @@ ActiveRecord::Schema[7.2].define(version: 2025_01_22_025044) do
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "pet_parent_applications", force: :cascade do |t|
+    t.string "address"
+    t.string "phone_no"
+    t.integer "status", default: 0
+    t.integer "user_id", null: false
+    t.integer "pet_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["pet_id"], name: "index_pet_parent_applications_on_pet_id"
+    t.index ["user_id"], name: "index_pet_parent_applications_on_user_id"
   end
 
   create_table "pets", force: :cascade do |t|
@@ -69,6 +81,8 @@ ActiveRecord::Schema[7.2].define(version: 2025_01_22_025044) do
   add_foreign_key "adoption_requests", "breeds"
   add_foreign_key "adoption_requests", "pets"
   add_foreign_key "adoption_requests", "users", column: "u_id"
+  add_foreign_key "pet_parent_applications", "pets"
+  add_foreign_key "pet_parent_applications", "users"
   add_foreign_key "pets", "breeds"
   add_foreign_key "pets", "breeds"
   add_foreign_key "pets", "categories"
