@@ -4,6 +4,7 @@ class AdoptionRequest < ApplicationRecord
   belongs_to :user, foreign_key: :u_id
 
   enum status: { pending: 0, rejected: 2, accepted: 1 }
+  # enum status: [ pending:, rejected:, accepted: ]
 
-  validates :pet_id, :breed_id, :u_id, presence: true
+  validates :pet_id, :breed_id, :user_id, presence: true
 end
