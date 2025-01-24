@@ -1,0 +1,33 @@
+<h1>Add User</h1>
+
+<%= form_with model: @user, url: users_path, method: :post do |f| %>
+  <div>
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name, required: true %>
+  </div>
+  <div>
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name, required: true %>
+  </div>
+  <div>
+    <%= f.label :email %>
+    <%= f.email_field :email, required: true %>
+  </div>
+  <div>
+    <%= f.label :phone_no %>
+    <%= f.telephone_field :phone_no, required: true %>
+  </div>
+  <div>
+    <%= f.label :password %>
+    <%= f.password_field :password, required: true %>
+  </div>
+  <div>
+    <%= f.label :role %>
+    <%= f.select :role, options_for_select([['User', 0], ['Admin', 1]], @user.role) %>
+  </div>
+  <div>
+    <%= f.submit 'Create User' %>
+  </div>
+<% end %>
+
+<%= link_to 'Back to Users', users_path %>
