@@ -63,3 +63,5 @@ gem "bcrypt", "~> 3.1.7"
 group :development do
   gem "byebug", "~> 11.1"
 end
+
+gem "haml", "~> 6.3"
