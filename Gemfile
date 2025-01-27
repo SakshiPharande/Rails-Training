@@ -65,3 +65,7 @@ group :development do
 end
 
 gem "haml", "~> 6.3"
+
+gem "jsbundling-rails", "~> 1.3"
+
+gem "devise", "~> 4.9"
