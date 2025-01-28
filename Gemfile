@@ -43,6 +43,8 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
+
+  gem "dotenv-rails"
 end
 
 group :development do
@@ -54,4 +56,30 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
+  gem "simplecov", require: false, group: :test
 end
+<<<<<<< Updated upstream
+=======
+
+gem "rails-erd"
+
+gem "bcrypt", "~> 3.1.7"
+
+group :development do
+  gem "byebug", "~> 11.1"
+end
+
+gem "haml", "~> 6.3"
+
+gem "jsbundling-rails", "~> 1.3"
+
+gem "devise", "~> 4.9"
+
+gem "versionist"
+
+gem "jwt"
+
+group :development, :test do
+  gem "rspec-rails", "~> 7.0.0"
+end
+>>>>>>> Stashed changes
