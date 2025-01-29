@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_01_23_041216) do
+ActiveRecord::Schema[7.2].define(version: 2025_01_29_074109) do
   create_table "adoption_requests", force: :cascade do |t|
     t.integer "pet_id", null: false
     t.integer "breed_id", null: false
@@ -72,10 +72,12 @@ ActiveRecord::Schema[7.2].define(version: 2025_01_23_041216) do
     t.string "last_name"
     t.string "email", null: false
     t.string "phone_no"
-    t.string "password"
+    t.string "password_digest"
     t.integer "role", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "profile_image_url"
+    t.datetime "discarded_at"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
