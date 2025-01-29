@@ -2,8 +2,10 @@
     <h1 class="text-center my-4">Users</h1>
 
     <div class="d-flex justify-content-start mb-3">
-      <button class="btn btn-primary">Add User</button>
+      <!-- Add User Button -->
+      <%= link_to 'Add User', class: 'btn btn-primary' %>
     </div>
+
 
     <table class="table table-bordered table-hover">
       <thead class="table-dark">
@@ -13,7 +15,6 @@
           <th>Last Name</th>
           <th>Email</th>
           <th>Phone No</th>
-          <th>Role</th>
           <th>Action</th>
         </tr>
       </thead>
@@ -25,10 +26,12 @@
             <td><%= user.last_name %></td>
             <td><%= user.email %></td>
             <td><%= user.phone_no %></td>
-            <td><%= user.role %></td>
             <td>
               <!-- View Icon -->
+           <%= link_to user_path(user), class: "text-decoration-none" do %>
               <i class="bi bi-eye text-success me-3" title="View User"></i>
+            <% end %>
+
               <!-- Edit Icon -->
               <i class="bi bi-pencil text-warning me-3" title="Edit"></i>
               <!-- Delete Icon -->
