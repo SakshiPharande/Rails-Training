@@ -31,9 +31,12 @@
            <%= link_to user_path(user), class: "text-decoration-none" do %>
               <i class="bi bi-eye text-success me-3" title="View User"></i>
             <% end %>
-
-              <!-- Edit Icon -->
+            <!-- Edit Icon -->
+            <%= link_to edit_user_path(user) do %>
               <i class="bi bi-pencil text-warning me-3" title="Edit"></i>
+            <% end %>
+
+
               <!-- Delete Icon -->
               <i class="bi bi-trash text-danger" title="Delete"></i>
             </td>
