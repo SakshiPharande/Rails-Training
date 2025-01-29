@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_01_29_074109) do
+ActiveRecord::Schema[7.2].define(version: 2025_01_29_112838) do
   create_table "adoption_requests", force: :cascade do |t|
     t.integer "pet_id", null: false
     t.integer "breed_id", null: false
@@ -72,13 +72,23 @@ ActiveRecord::Schema[7.2].define(version: 2025_01_29_074109) do
     t.string "last_name"
     t.string "email", null: false
     t.string "phone_no"
-    t.string "password_digest"
     t.integer "role", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "profile_image_url"
     t.datetime "discarded_at"
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
+    t.integer "failed_attempts", default: 0, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "adoption_requests", "breeds"
