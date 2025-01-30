@@ -55,3 +55,17 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem "rails-erd"
+
+gem "bcrypt", "~> 3.1.7"
+
+group :development do
+  gem "byebug", "~> 11.1"
+end
+
+gem "haml", "~> 6.3"
+
+gem "jsbundling-rails", "~> 1.3"
+gem "devise", "~> 4.9"
+gem "discard", "~> 1.4"
