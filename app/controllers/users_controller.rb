@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def index
-    @users = User.all
+    @users = User.kept
   end
 
   def show
@@ -36,6 +36,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def destroy
+    @user = User.find(params[:id])  # Find the user
+    @user.discard  # Permanently delete the user
+    redirect_to users_path, notice: "User deleted successfuly."
+  end
 
   private
 

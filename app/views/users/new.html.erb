@@ -34,12 +34,6 @@
           <%= f.password_field :password, class: "form-control", required: true %>
         </div>
 
-        <!-- Role -->
-        <div class="col-md-6">
-          <%= f.label :role, class: "form-label" %>
-          <%= f.select :role, options_for_select([['User', 0], ['Admin', 1]], @user.role), {}, class: "form-select" %>
-        </div>
-
         <!-- Submit and Back Buttons -->
         <div class="col-12">
           <%= f.submit 'Create User', class: "btn btn-primary" %>
